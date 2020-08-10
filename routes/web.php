@@ -20,10 +20,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/proyek', 'ItemController@create'); // menampilkan halaman form
-Route::get('/proyek/create', 'ItemController@create'); // membuat proyek nikah
-Route::get('/proyek', 'ItemController@index'); // menampilkan semua
-Route::get('/proyek/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/proyek/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/proyek/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/proyek/{id}', 'ItemController@destroy'); // menghapus data dengan id
+Route::get('/proyek', 'ItemController@list_proyek'); 
+Route::get('/proyek/create', 'ItemController@form'); 
+Route::post('/proyek', 'ItemController@store'); 
+Route::get('/proyek/{id}/daftarkan-staff', 'ItemController@daftarkan_staff'); 
+Route::post('/proyek/{id}/daftarkan-staff', 'ItemController@store_staft'); 
+Route::get('/proyek/{id}/edit', 'ItemController@edit'); 
+Route::put('/proyek/{id}', 'ItemController@update'); 
+Route::delete('/proyek/{id}', 'ItemController@destroy'); 
